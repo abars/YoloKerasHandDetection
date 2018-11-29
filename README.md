@@ -46,21 +46,33 @@ Create dataset/vivahand/detectiondata/train/pos annotations for darknet.
 
 ## Train using Darknet
 
-Here is a train.
+Here is a training using YoloV2.
 
 `cd darknet`
 
-`./darknet yolo train ../cfg/vivahand_tinyyolov1.cfg -train ../dataset/vivahand/detectiondata/train/pos/train.txt -backup ./backup/ -class 4`
+`./darknet detector train data/hand-one-class.data cfg/yolov2-tiny-train-one-class.cfg`
 
 ## Test using Darknet
 
 Here is a test.
 
-`./darknet yolo test ../cfg/vivahand_tinyyolov1.cfg ./backup/vivahand_tinyyolov1_4000.weights ../dataset/vivahand/detectiondata/train/pos/1_0000003_0_0_0_6.png -class 4`
+`./darknet detector demo data/hand-one-class.data cfg/yolov2-tiny-train-one-class.cfg backup-face/yolov2-tiny-train-one-class_32600.weights -c 0`
 
-Here is a run.
+## Training Result
 
-`./darknet yolo demo ../cfg/vivahand_tinyyolov1.cfg ./backup/vivahand_tinyyolov1_4000.weights -class 4`
+TBD
 
+## Convert to Keras Model
 
+Download YAD2K
+
+https://github.com/allanzelener/YAD2K
+
+This is a convert script.
+
+`python3 yad2k.py yolov2-tiny-train-one-class.cfg yolov2-tiny-train-one-class_32600.weights yolov2_tiny-hand.h5`
+
+This is a converted model.
+
+TBD
 
