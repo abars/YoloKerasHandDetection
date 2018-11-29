@@ -154,6 +154,22 @@ def _softmax(x, axis=-1, t=-100.):
 	
 	return e_x / e_x.sum(axis, keepdims=True)
 
+#crop
+def crop(x,y,w,h,margin,img_width,img_height):
+	xmin = int(x-w*margin)
+	xmax = int(x+w*margin)
+	ymin = int(y-h*margin)
+	ymax = int(y+h*margin)
+	if xmin<0:
+		xmin = 0
+	if ymin<0:
+		ymin = 0
+	if xmax>img_width:
+		xmax = img_width
+	if ymax>img_height:
+		ymax = img_height
+	return xmin,xmax,ymin,ymax
+
 #display result
 def show_results(img,results, img_width, img_height):
 	img_cp = img.copy()
@@ -163,23 +179,7 @@ def show_results(img,results, img_width, img_height):
 		w = int(results[i][3])//2
 		h = int(results[i][4])//2
 
-		if(w<h):
-			w=h
-		else:
-			h=w
-
-		xmin = x-w
-		xmax = x+w
-		ymin = y-h
-		ymax = y+h
-		if xmin<0:
-			xmin = 0
-		if ymin<0:
-			ymin = 0
-		if xmax>img_width:
-			xmax = img_width
-		if ymax>img_height:
-			ymax = img_height
+		xmin,xmax,ymin,ymax=crop(x,y,w,h,1.0,img_width,img_height)
 
 		cv2.rectangle(img_cp,(xmin,ymin),(xmax,ymax),(0,255,0),2)
 		cv2.rectangle(img_cp,(xmin,ymin-20),(xmax,ymin),(125,125,125),-1)
