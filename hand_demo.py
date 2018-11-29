@@ -193,10 +193,14 @@ def main(argv):
 	#Load Model
 	model_hand = load_model(MODEL_ROOT_PATH+'yolov2_tiny-hand.h5')
 
+	#Prepare WebCamera
+	cap = cv2.VideoCapture(0)
+	cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+	cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+
 	#Detection
 	while True:
 		#Face Detection
-		cap = cv2.VideoCapture(0)
 		ret, frame = cap.read() #BGR
 		img=frame
 		img = img[...,::-1]  #BGR 2 RGB
