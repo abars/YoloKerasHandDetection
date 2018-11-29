@@ -12,11 +12,11 @@ Hand Detection
 
 Keras2 (Tensorflow backend)
 
-Darknet
-
 OpenCV
 
-Python 2.7
+Python 2.7 or 3.6
+
+Darknet (for Training)
 
 Perl (for Training)
 
@@ -43,6 +43,8 @@ http://cvrr.ucsd.edu/vivachallenge/index.php/hands/hand-detection/
 Create dataset/vivahand/detectiondata/train/pos annotations for darknet.
 
 `perl annotation_vivahand_darknet.pl`
+
+<img src="https://github.com/abars/YoloKerasHandDetection/blob/master/dataset/vivahand.png" width="50%" height="50%">
 
 ## Train using Darknet
 
