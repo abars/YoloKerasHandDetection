@@ -2,6 +2,9 @@
 
 Implement Hand detection using Keras. (Under Constructing)
 
+<img src="https://github.com/abars/YoloKerasHandDetection/blob/master/pretrain/prediction.png" width="50%" height="50%">
+(image from viva hand dataset)
+
 # Overview
 
 ## Functions
@@ -58,11 +61,15 @@ Here is a training using YoloV2.
 
 Here is a test.
 
-`./darknet detector demo data/hand-one-class.data cfg/yolov2-tiny-train-one-class.cfg backup-face/yolov2-tiny-train-one-class_32600.weights -c 0`
+`./darknet detector demo data/hand-one-class.data cfg/yolov2-tiny-train-one-class.cfg backup-face/yolov2-tiny-train-one-class_28600.weights -c 0`
 
 ## Training Result
 
-TBD
+<img src="https://github.com/abars/YoloKerasHandDetection/blob/master/pretrain/yolov2-tiny-train-one-class_28600.jpg" width="50%" height="50%">
+
+<http://www.abars.biz/keras/yolov2-tiny-one-class.cfg>
+
+<http://www.abars.biz/keras/yolov2-tiny-train-one-class_28600.weights>
 
 ## Convert to Keras Model
 
@@ -72,9 +79,9 @@ https://github.com/allanzelener/YAD2K
 
 This is a convert script.
 
-`python3 yad2k.py yolov2-tiny-train-one-class.cfg yolov2-tiny-train-one-class_32600.weights yolov2_tiny-hand.h5`
+`python3 yad2k.py yolov2-tiny-train-one-class.cfg yolov2-tiny-train-one-class_28600.weights yolov2_tiny-hand.h5`
 
 This is a converted model.
 
-TBD
+<http://www.abars.biz/keras/yolov2_tiny-hand.h5>
 
