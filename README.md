@@ -2,7 +2,7 @@
 
 Implement Hand detection using Keras. (Under Constructing)
 
-<img src="https://github.com/abars/YoloKerasHandDetection/blob/master/pretrain/prediction.png" width="50%" height="50%">
+<img src="https://github.com/abars/YoloKerasHandDetection/blob/master/pretrain/predictions.jpg" width="50%" height="50%">
 (image from viva hand dataset)
 
 # Overview
