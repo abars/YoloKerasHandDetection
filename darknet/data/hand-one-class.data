@@ -1,0 +1,6 @@
+classes= 1
+train  = ../dataset/vivahand/detectiondata/train/pos/train.txt
+valid  = ../dataset/vivahand/detectiondata/train/pos/test.txt
+#difficult = data/difficult_2007_test.txt
+names = data/coco.names
+backup = c:\\deeplearning\\backup
